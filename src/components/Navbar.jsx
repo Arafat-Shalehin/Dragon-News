@@ -19,7 +19,9 @@ const Navbar = () => {
     return (
         <div className='flex justify-between items-center'>
 
-            <div className="lg:w-[10.5%] md:w-[20%] w-[26%] sm:block hidden"></div>
+            <div className="lg:w-[10.5%] md:w-[20%] w-[26%] sm:block hidden font-semibold text-md">
+                {user?.email}
+            </div>
             <div className="nav flex gap-5 font-semibold text-accent">
                 <NavLink to='/'>Home</NavLink>
                 <NavLink to='/about'>About</NavLink>

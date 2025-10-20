@@ -29,10 +29,11 @@ const NewsCard = ({ news }) => {
       </div>
 
       {/* Footer Button */}
-      <div className="bg-rose-600 text-white px-5 py-3 flex items-center justify-center gap-2 cursor-pointer hover:bg-rose-700 transition">
-        <FaArrowLeft size={14} />
-        <Link to={`/category/${category_id}`} className="text-sm font-medium">All news in this category</Link>
-      </div>
+      <Link 
+      to={`/category/${category_id}`} 
+      className="text-sm font-medium bg-rose-600 text-white px-5 py-3 flex items-center justify-center gap-2 cursor-pointer hover:bg-rose-700 transition">
+        <FaArrowLeft size={14} /> All news in this category
+      </Link>
     </div>
   );
 };
