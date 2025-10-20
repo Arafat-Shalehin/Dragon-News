@@ -1,8 +1,21 @@
-import React from 'react';
+import React, { use } from 'react';
 import { Link, NavLink } from 'react-router';
 import userimg from '../assets/user.png'
+import { AuthContext } from '../provider/AuthProvider';
 
 const Navbar = () => {
+
+    const {user, logOutUser} = use(AuthContext);
+
+    const handleLogout = () => {
+        logOutUser()
+        .then(() => {
+            alert('Sign-out successful.')
+        }).catch((error) => {
+            alert(error.message);
+        });
+    }
+
     return (
         <div className='flex justify-between items-center'>
 
@@ -17,7 +30,13 @@ const Navbar = () => {
                 className='sm:block hidden'
                 src={userimg} 
                 alt="User Image"/>
-                <Link to='/auth/login' className='btn btn-primary px-10'>Login</Link>
+                {user ? 
+                (
+                    <button onClick={handleLogout} className='btn btn-primary px-10'>LogOut</button>
+                ) 
+                : 
+                (<Link to='/auth/login' className='btn btn-primary px-10'>Login</Link>)}
+                
             </div>
             
         </div>
