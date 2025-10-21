@@ -11,8 +11,6 @@ const NewsDetails = () => {
 
     const [news, setNews] = useState({});
 
-    console.log(data, id, news);
-
     useEffect(() => {
   if (data?.length) {
         const cleanId = id.replace(':', '');

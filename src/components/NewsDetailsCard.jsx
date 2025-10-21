@@ -11,7 +11,8 @@ const NewsCard = ({ news }) => {
   } = news;
 
   return (
-    <div className="max-w-lg mx-auto bg-white rounded-md overflow-hidden shadow border border-gray-200">
+    <div className="max-w-fit mx-auto bg-white rounded-md 
+    overflow-hidden shadow border border-gray-200">
       {/* Image */}
       <img
         src={thumbnail_url}

@@ -27,10 +27,10 @@ const Navbar = () => {
                 <NavLink to='/about'>About</NavLink>
                 <NavLink to='/career'>Career</NavLink>
             </div>
-            <div className="login-btn flex gap-2">
+            <div className="login-btn flex items-center gap-2">
                 <img
-                className='sm:block hidden'
-                src={userimg} 
+                className='sm:block hidden w-12 rounded-full'
+                src={`${user ? user.photoURL : userimg}`} 
                 alt="User Image"/>
                 {user ? 
                 (
